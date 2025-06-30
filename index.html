@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Gestión de Tareas - PFO2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+
+  <div class="container mt-5">
+    <h1 class="mb-4">📝 Sistema de Gestión de Tareas (PFO2)</h1>
+
+    <p>Este proyecto implementa una API REST en Python usando Flask, con autenticación básica y persistencia en SQLite.</p>
+
+    <h2>🚀 Cómo ejecutar el proyecto</h2>
+    <ol>
+      <li>Cloná este repositorio o descargá los archivos.</li>
+      <li>Instalá dependencias:
+        <pre><code>pip install flask werkzeug</code></pre>
+      </li>
+      <li>Ejecutá el servidor:
+        <pre><code>python server.py</code></pre>
+      </li>
+    </ol>
+
+    <h2>📡 Endpoints disponibles</h2>
+    <ul>
+      <li><strong>POST /registro</strong>: Registra un usuario.</li>
+      <li><strong>POST /login</strong>: Inicia sesión.</li>
+      <li><strong>GET /tareas</strong>: Muestra una bienvenida en HTML.</li>
+    </ul>
+
+    <h2>📂 Estructura del proyecto</h2>
+    <pre><code>PFO2-Redes/
+├── servidor.py
+├── bd.py
+├── auth.py
+├── index.html
+└── README.md</code></pre>
+
+    <h2>📚 Respuestas Conceptuales</h2>
+
+    <h5>❓ ¿Por qué hashear contraseñas?</h5>
+    <p>Porque guardar contraseñas en texto plano es inseguro. Hashear significa cifrarlas de manera irreversible, para que ni el sistema ni atacantes puedan leerlas directamente.</p>
+
+    <h5>❓ Ventajas de usar SQLite</h5>
+    <ul>
+      <li>Liviana y sin servidor adicional.</li>
+      <li>Ideal para pruebas o aplicaciones pequeñas.</li>
+      <li>Fácil de usar desde Python sin instalación externa.</li>
+    </ul>
+
+    <h2>🧪 Pruebas con curl</h2>
+    <pre><code># Registro
+curl -X POST http://localhost:5000/registro -H "Content-Type: application/json" -d "{\"usuario\":\"seba\",\"contraseña\":\"1234\"}"
+
+# Login
+curl -X POST http://localhost:5000/login -H "Content-Type: application/json" -d "{\"usuario\":\"seba\",\"contraseña\":\"1234\"}"
+
+# Ver bienvenida
+curl http://localhost:5000/tareas
+</code></pre>
+
+    <footer class="mt-5 text-muted">
+      <hr>
+      <p>Proyecto realizado por [Tu Nombre] - PFO2 Redes</p>
+    </footer>
+  </div>
+
+</body>
+</html>
